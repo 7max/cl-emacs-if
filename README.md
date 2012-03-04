@@ -11,12 +11,17 @@ statements for Common Lisp.
 
     (in-package :my-package)
 
-    (defun test ()
+    (defun test-1 ()
       (if (oddp (random 100)) (print 'one)
         (print 'two)
         (print 'three))
       (values))
         
+    (defun test-2 ()
+      (let ((n 10))
+        (while (plusp n)
+          (print (decf n)))
+      (values)))
         
 
 

@@ -1,11 +1,11 @@
 (defpackage #:emacs-if
   (:use #:cl)
-  (:shadow #:if #:while)
+  (:shadow #:if)
   (:export #:if #:while))
 
 (in-package #:emacs-if)
 
-(defmacro emacs-if:if (test then &rest else)
+(defmacro emacs-if:if (test then &body else)
   "Emacs like IF statement that allows multiple ELSE clauses"
   (cl:if (null (rest else))
          `(cl:if ,test ,then ,@else)
